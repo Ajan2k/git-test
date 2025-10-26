@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Order Summary</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Work+Sans:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet"/>
+<script>
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#1193d4",
+                        "background-light": "#f6f7f8",
+                        "background-dark": "#101c22",
+                    },
+                    fontFamily: {
+                        "display": ["Work Sans"]
+                    },
+                    borderRadius: {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                },
+            },
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="font-display">
+<div class="relative flex min-h-screen w-full flex-col bg-background-light dark:bg-background-dark group/design-root overflow-x-hidden">
+<!-- Top App Bar -->
+<div class="flex items-center bg-white dark:bg-background-dark p-4 pb-2 justify-between sticky top-0 z-10">
+<div class="text-[#111618] dark:text-white flex size-12 shrink-0 items-center justify-start">
+<span class="material-symbols-outlined text-2xl">arrow_back</span>
+</div>
+<h2 class="text-[#111618] dark:text-white text-lg font-bold leading-tight tracking-[-0.015em] flex-1 text-center -ml-12">Order Summary</h2>
+</div>
+<div class="flex-grow pb-28 px-4">
+<!-- Station & Fuel Details Card -->
+<div class="bg-white dark:bg-gray-800/50 rounded-xl shadow-sm mb-4">
+<div class="flex items-center gap-4 p-4">
+<div class="text-[#111618] dark:text-white flex items-center justify-center rounded-lg bg-background-light dark:bg-background-dark shrink-0 size-12">
+<span class="material-symbols-outlined text-2xl">local_gas_station</span>
+</div>
+<div class="flex flex-col justify-center">
+<p class="text-[#111618] dark:text-white text-base font-medium leading-normal line-clamp-1">Shell Station</p>
+<p class="text-[#617c89] dark:text-gray-400 text-sm font-normal leading-normal line-clamp-2">123 Main St, Anytown, USA</p>
+</div>
+</div>
+</div>
+<!-- Main Order Details Card -->
+<div class="bg-white dark:bg-gray-800/50 rounded-xl shadow-sm p-4 space-y-4">
+<!-- Fuel Adjustment Section -->
+<div class="flex items-center gap-4 min-h-14 justify-between">
+<div class="flex items-center gap-4">
+<div class="text-[#111618] dark:text-white flex items-center justify-center rounded-lg bg-background-light dark:bg-background-dark shrink-0 size-10">
+<span class="material-symbols-outlined text-2xl">water_drop</span>
+</div>
+<p class="text-[#111618] dark:text-white text-base font-normal leading-normal flex-1 truncate">Fuel Amount</p>
+</div>
+<div class="shrink-0">
+<div class="flex items-center gap-2 text-[#111618] dark:text-white">
+<button class="text-base font-medium leading-normal flex h-8 w-8 items-center justify-center rounded-full bg-background-light dark:bg-background-dark cursor-pointer text-primary">-</button>
+<div class="flex items-baseline">
+<input class="text-base font-medium leading-normal w-12 p-0 text-center bg-transparent focus:outline-0 focus:ring-0 focus:border-none border-none [appearance:textfield] [&amp;::-webkit-inner-spin-button]:appearance-none [&amp;::-webkit-outer-spin-button]:appearance-none" type="number" value="20"/>
+<span class="text-sm text-[#617c89] dark:text-gray-400">Litres</span>
+</div>
+<button class="text-base font-medium leading-normal flex h-8 w-8 items-center justify-center rounded-full bg-primary text-white cursor-pointer">+</button>
+</div>
+</div>
+</div>
+<!-- Insurance Section -->
+<div class="flex items-center gap-4 min-h-[72px] py-2 justify-between">
+<div class="flex items-center gap-4">
+<div class="text-[#111618] dark:text-white flex items-center justify-center rounded-lg bg-background-light dark:bg-background-dark shrink-0 size-10">
+<span class="material-symbols-outlined text-2xl">shield_person</span>
+</div>
+<div class="flex flex-col justify-center">
+<p class="text-[#111618] dark:text-white text-base font-medium leading-normal line-clamp-1">Add Order Protection</p>
+<p class="text-[#617c89] dark:text-gray-400 text-sm font-normal leading-normal line-clamp-2">Protect your purchase with roadside assistance.</p>
+</div>
+</div>
+<div class="shrink-0">
+<label class="relative flex h-[31px] w-[51px] cursor-pointer items-center rounded-full border-none bg-background-light dark:bg-background-dark p-0.5 has-[:checked]:justify-end has-[:checked]:bg-primary">
+<div class="h-full w-[27px] rounded-full bg-white transition-transform" style="box-shadow: rgba(0, 0, 0, 0.15) 0px 3px 8px, rgba(0, 0, 0, 0.06) 0px 3px 1px;"></div>
+<input checked="" class="invisible absolute" type="checkbox"/>
+</label>
+</div>
+</div>
+<hr class="border-gray-200 dark:border-gray-700"/>
+<!-- Price Summary Section -->
+<div class="space-y-2">
+<div class="flex justify-between gap-x-6 py-1">
+<p class="text-[#617c89] dark:text-gray-400 text-sm font-normal leading-normal">Fuel Type</p>
+<p class="text-[#111618] dark:text-white text-sm font-normal leading-normal text-right">Unleaded 95</p>
+</div>
+<div class="flex justify-between gap-x-6 py-1">
+<p class="text-[#617c89] dark:text-gray-400 text-sm font-normal leading-normal">Subtotal (20L @ €1.27/L)</p>
+<p class="text-[#111618] dark:text-white text-sm font-normal leading-normal text-right">€25.50</p>
+</div>
+<div class="flex justify-between gap-x-6 py-1">
+<p class="text-[#617c89] dark:text-gray-400 text-sm font-normal leading-normal">Taxes &amp; Fees</p>
+<p class="text-[#111618] dark:text-white text-sm font-normal leading-normal text-right">€2.50</p>
+</div>
+<div class="flex justify-between gap-x-6 py-1">
+<p class="text-[#617c89] dark:text-gray-400 text-sm font-normal leading-normal">Order Protection</p>
+<p class="text-[#111618] dark:text-white text-sm font-normal leading-normal text-right">€1.00</p>
+</div>
+<div class="flex justify-between items-center gap-x-6 pt-4 mt-2 border-t border-dashed border-gray-300 dark:border-gray-600">
+<p class="text-[#111618] dark:text-white text-base font-bold leading-normal">Total</p>
+<p class="text-primary text-2xl font-bold leading-normal text-right">€29.00</p>
+</div>
+</div>
+</div>
+</div>
+<!-- Floating Action Button -->
+<div class="fixed bottom-0 left-0 w-full bg-white dark:bg-gray-800/50 p-4 pt-3 backdrop-blur-sm border-t border-gray-200 dark:border-gray-700/50">
+<button class="w-full bg-primary text-white font-bold py-4 px-6 rounded-xl shadow-lg shadow-primary/30 hover:bg-primary/90 focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2 focus:ring-offset-background-light dark:focus:ring-offset-background-dark transition-all duration-300">Proceed to Payment</button>
+</div>
+</div>
+</body></html>
