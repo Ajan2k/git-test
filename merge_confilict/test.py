@@ -1,1 +1,1 @@
-print("new message")
+b =56
